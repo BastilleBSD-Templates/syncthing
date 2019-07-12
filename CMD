@@ -1,0 +1,25 @@
+chown syncthing:syncthing /var/log/syncthing.log
+
+chown syncthing:syncthing /var/run/syncthing.pid
+
+chown syncthing:syncthing /syncthing
+
+chmod 750 /syncthing
+
+grep -i relay /usr/local/etc/syncthing/config.xml
+        {relaysEnabled}true{/relaysEnabled}
+        {relayReconnectIntervalM}10{/relayReconnectIntervalM}
+
+grep -i relay /usr/local/etc/syncthing/config.xml
+        {relaysEnabled}false{/relaysEnabled}
+        {relayReconnectIntervalM}10{/relayReconnectIntervalM}
+
+grep globalAnnounce /usr/local/etc/syncthing/config.xml
+        {globalAnnounceServer}default{/globalAnnounceServer}
+        {globalAnnounceEnabled}true{/globalAnnounceEnabled}
+
+grep globalAnnounce /usr/local/etc/syncthing/config.xml
+        {globalAnnounceServer}default{/globalAnnounceServer}
+        {globalAnnounceEnabled}false{/globalAnnounceEnabled}
+
+
